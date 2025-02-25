@@ -51,6 +51,8 @@ An AWS IAM user with an API access-key
 
 A baremetal AMI and a boostrap dummy.box bundled using bundler.
 
+see: [https://github.com/korningf/vbox-aws-dummy]
+ 
 
 ───────────────────────────────────────────────────────────────────────
 # Installation
@@ -120,7 +122,7 @@ Re-provision the machine
 	
 
 ───────────────────────────────────────────────────────────────────────
-# Attritbution
+# Attribution
 ───────────────────────────────────────────────────────────────────────
 
   All the credit goes to Mitchel Hashimoto.
