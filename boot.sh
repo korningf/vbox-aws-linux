@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# banner (motd) 
+curl  https://raw.githubusercontent.com/korningf/vbox-aws-linux/refs/heads/main/motd > /etc/motd
+
+# ubuntu base (22 jammy)
+
 # apt keyrings
 mkdir -p /etc/env
 mkdir -p /etc/apt/keyrings
@@ -7,18 +12,13 @@ mkdir -p /etc/apt/keyrings
 # apt repositories 
 apt update
 
-
 # apt packages
+apt-get -y install tree pass git gnupg
 
-# aws-cli
-apt-get -y aws-cli --classic
+apt-get -y aws-cli
 
-# apache httpd
-apt-get -y httpd --classic
+apt-get -y httpd
 
-
-# banner (motd) 
-curl  https://raw.githubusercontent.com/korningf/vbox-aws-linux/refs/heads/main/motd > /etc/motd
 
 # constants
 REGION=us-east-1
@@ -39,4 +39,3 @@ echo $AWS_PUB_IP >> /etc/env/aws_pub_ip
 echo $AWS_PUB_HOST >> /etc/env/aws_pub_host
 
 echo $AWS_TAG_NAME >> /etc/env/aws_ec2_name
-
